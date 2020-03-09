@@ -1,0 +1,15 @@
+<h1>Round result</h1>
+
+<h3>Total score: <%= cookies[:score] %></h3>
+
+<% if @valid_grid == false %>
+  <p>Sorry, you can't make <%= @word.upcase %> out of <%= @letters.upcase.join(", ") %>.</p>
+<% elsif @valid_english == false %>
+  <p>Sorry, <%= @word.upcase %> doesn't appear to be a valid English word</p>
+<% else %>
+  <p>Congratulations! <%= @word.upcase %> is worth <%= @round_score %> points!</p>
+<% end %>
+
+<%= link_to "Play again", new_path %>
+
+<p>Find me in app/views/games/score.html.erb</p>
